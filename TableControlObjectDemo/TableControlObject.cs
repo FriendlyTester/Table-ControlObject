@@ -57,11 +57,11 @@ namespace ControlObjects
             {
                 if (ex is ArgumentNullException)
                 {
-                    throw new ArgumentException(string.Format("Unable to find {0} in the list of columns found", columnName));
+                    throw new Exception(string.Format("Unable to find {0} in the list of columns found", columnName));
                 }
                 if (ex is InvalidOperationException)
                 {
-                    throw new ArgumentException(string.Format("More than one column was found for {0}", columnName));
+                    throw new Exception(string.Format("More than one column was found for {0}", columnName));
                 }
                 else
                 {
@@ -171,7 +171,7 @@ namespace ControlObjects
             }
             catch (Exception)
             {
-                throw new ArgumentException(string.Format("Unable to find a cell in column: {0} containing {1}", columnName, knownValue));
+                throw new Exception(string.Format("Unable to find a cell in column: {0} containing {1}", columnName, knownValue));
             }
 
             return matchedRow.FindElement(By.XPath(string.Format("td[{0}]", FindColumnIndex(columnName))));
@@ -193,7 +193,7 @@ namespace ControlObjects
             }
             catch (Exception)
             {
-                throw new ArgumentException("Unable to find a cell using given row and columnName");
+                throw new Exception("Unable to find a cell using given row and columnName");
             }
 
             return cell;

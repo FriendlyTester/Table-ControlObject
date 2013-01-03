@@ -22,7 +22,7 @@ namespace TableControlObjectDemoTests
         public void Setup()
         {
             WebDriver = new FirefoxDriver();
-            WebDriver.Navigate().GoToUrl("http://www.thefriendlytester.co.uk/2012/12/table-control-object.html");
+            WebDriver.Navigate().GoToUrl("http://www.thefriendlytester.co.uk/2012/12/table-controlobject.html");
             WebDriver.Manage().Window.Maximize();
         }
 
